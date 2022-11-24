@@ -99,8 +99,8 @@ fi
 if [ "$VERSION" == "release" ]; then
     # install rknn toolkit script
     mkdir -p $TARGET_ROOTFS_DIR/home/linaro/Desktop
-    sudo cp -rf overlay-debug/home/linaro/Desktop/debian10_rknn_toolkit_v1.7.1 $TARGET_ROOTFS_DIR/home/linaro/Desktop/debian10_rknn_toolkit_v1.7.1
-    sudo cp -f overlay-debug/home/linaro/Desktop/debian10_install-rknn-toolkit-v1.7.1.sh $TARGET_ROOTFS_DIR/home/linaro/Desktop/
+    sudo cp -rf overlay-debug/home/linaro/Desktop/debian10_rknn_toolkit_v1.7.3 $TARGET_ROOTFS_DIR/home/linaro/Desktop/debian10_rknn_toolkit_v1.7.3
+    sudo cp -f overlay-debug/home/linaro/Desktop/debian10_install-rknn-toolkit-v1.7.3.sh $TARGET_ROOTFS_DIR/home/linaro/Desktop/
 fi
 
 echo -e "\033[36m Change root.....................\033[0m"
@@ -156,7 +156,7 @@ chmod 755 /usr/lib/pm-utils/sleep.d/02pulseaudio-suspend
 # Tinker Edge R: rknn-toolkit
 # change owner and permission for install rknn toolkit script
 chown -R linaro:linaro /home/linaro/Desktop/
-chmod a+x /home/linaro/Desktop/debian10_install-rknn-toolkit-v1.7.1.sh
+chmod a+x /home/linaro/Desktop/debian10_install-rknn-toolkit_lite-v1.7.3.sh
 # Tinker Edge R: rknn-toolkit
 
 chmod o+x /usr/lib/dbus-1.0/dbus-daemon-launch-helper
