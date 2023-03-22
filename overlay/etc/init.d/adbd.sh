@@ -22,7 +22,7 @@ UVC_EN=off
 RNDIS_EN=off
 
 USB_ATTRIBUTE=0x409
-USB_GROUP=rockchip
+USB_GROUP=asus
 USB_SKELETON=b.1
 
 CONFIGFS_DIR=/sys/kernel/config
@@ -112,6 +112,14 @@ parameter_init()
 			VID=0x2207
 			PID=0x1005
 			;;
+		rndis)
+			VID=0x0b05
+			PID=0x7774
+			;;
+		rndis_adb | adb_rndis)
+			VID=0x0b05
+			PID=0x7775
+			;;
 		*)
 			VID=0x2207
 			PID=0x0019
@@ -184,6 +192,14 @@ function_init()
 		then
 			mkdir -p ${USB_FUNCTIONS_DIR}/ffs.adb
 			ln -s ${USB_FUNCTIONS_DIR}/ffs.adb ${USB_CONFIGS_DIR}/ffs.adb
+		fi
+	fi
+
+	if [ $RNDIS_EN = on ];then
+		if [ ! -e "${USB_FUNCTIONS_DIR}/rndis.gs0" ] ;
+		then
+			mkdir -p ${USB_FUNCTIONS_DIR}/rndis.gs0
+			ln -s ${USB_FUNCTIONS_DIR}/rndis.gs0 ${USB_CONFIGS_DIR}/rndis.gs0
 		fi
 	fi
 
