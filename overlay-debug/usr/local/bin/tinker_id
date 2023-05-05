@@ -37,14 +37,18 @@ function check_bid {
     Vboard_id=5
 
     if [ $(echo "$voltage_result > 1700" | bc) -eq 1 -a $(echo "$voltage_result < 1900" | bc) -eq 1 ]; then
-        Vboard_id=3
+        Vboard_id=4
     fi
 
     if [ $(echo "$voltage_result > 1100" | bc) -eq 1 -a $(echo "$voltage_result < 1300" | bc) -eq 1 ]; then
-        Vboard_id=2
+        Vboard_id=3
     fi
 
     if [ $(echo "$voltage_result > 800" | bc) -eq 1 -a $(echo "$voltage_result < 1000" | bc) -eq 1 ]; then
+        Vboard_id=2
+    fi
+
+    if [ $(echo "$voltage_result > 500" | bc) -eq 1 -a $(echo "$voltage_result < 700" | bc) -eq 1 ]; then
         Vboard_id=1
     fi
 
@@ -134,15 +138,18 @@ if [ "$#" -eq 1 ]; then
         ret_Vid=$?
 
         case $ret_Vid in
-        3)
+        4)
             echo "1.02"
             ;;
-        2)
+        3)
             echo "1.04"
             ;;
-        1)
+        2)
             echo "1.01"
             ;;
+        1)
+	    echo "1.05"
+	    ;;
         0)
             echo "1.03"
             ;;
