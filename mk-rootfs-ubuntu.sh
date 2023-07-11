@@ -62,7 +62,11 @@ sudo cp overlay/lib/systemd/system/resize-helper.service $TARGET_ROOTFS_DIR/lib/
 sudo cp overlay/usr/sbin/resize-helper $TARGET_ROOTFS_DIR/usr/sbin/resize-helper
 
 # overlay-firmware folder
-###sudo cp -rf overlay-firmware/* $TARGET_ROOTFS_DIR/
+#sudo cp -rf overlay-firmware/* $TARGET_ROOTFS_DIR/
+sudo cp -rf overlay-firmware/etc/* $TARGET_ROOTFS_DIR/etc/
+sudo cp -rf overlay-firmware/lib/* $TARGET_ROOTFS_DIR/usr/lib/
+sudo cp -rf overlay-firmware/system/* $TARGET_ROOTFS_DIR/system/
+sudo cp -rf overlay-firmware/usr/* $TARGET_ROOTFS_DIR/usr/
 
 # overlay-debug folder
 # adb, video, camera  test file
