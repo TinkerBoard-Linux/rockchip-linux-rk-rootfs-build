@@ -58,6 +58,8 @@ sudo tar -C $TARGET_ROOTFS_DIR -xpf ubuntu-base-arm64.tar.gz
 
 # overlay folder
 ###sudo cp -rf overlay/* $TARGET_ROOTFS_DIR/
+sudo cp -rf overlay/etc/audio $TARGET_ROOTFS_DIR/etc/audio
+sudo rm $TARGET_ROOTFS_DIR/etc/audio/audio.conf
 sudo cp overlay/lib/systemd/system/resize-helper.service $TARGET_ROOTFS_DIR/lib/systemd/system/resize-helper.service
 sudo cp overlay/usr/sbin/resize-helper $TARGET_ROOTFS_DIR/usr/sbin/resize-helper
 
@@ -166,7 +168,7 @@ apt-get update
 #-------------------------------------------------------
 
 # Tinker Edge R: Audio
-###chmod 755 /etc/audio/auto_audio_switch.sh
+chmod 755 /etc/audio/auto_audio_switch.sh
 ###chmod 666 /etc/audio/audio.conf
 ###chmod 755 /usr/lib/pm-utils/sleep.d/02pulseaudio-suspend
 
