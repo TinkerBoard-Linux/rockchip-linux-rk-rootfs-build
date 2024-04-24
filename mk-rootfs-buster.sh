@@ -54,7 +54,7 @@ sudo cp -rf overlay-debug/* $TARGET_ROOTFS_DIR/
 fi
 
 ## hack the serial
-sudo cp -f overlay/usr/lib/systemd/system/serial-getty@.service $TARGET_ROOTFS_DIR/lib/systemd/system/serial-getty@.service
+#sudo cp -f overlay/usr/lib/systemd/system/serial-getty@.service $TARGET_ROOTFS_DIR/lib/systemd/system/serial-getty@.service
 
 # bt/wifi firmware
 if [ "$ARCH" == "armhf" ]; then
